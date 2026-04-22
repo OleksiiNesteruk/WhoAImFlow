@@ -1,11 +1,44 @@
-# FeedbackFlow
+# WhoAImFlow
 
-React + TypeScript + Vite dashboard for feedback analytics and game statistics.
+WhoAImFlow is a web dashboard for tracking player feedback and in-game performance data in one place. It helps teams turn raw feedback entries and gameplay records into clear, actionable insights.
 
-## Local запуск
+## Who It's For
 
-1. Створи `.env` у корені проєкту.
-2. Додай змінні:
+This product is built for game teams, product owners, analysts, and admins who need a simple internal dashboard to monitor player sentiment and review gameplay statistics without digging through raw database records.
+
+## Core Features
+
+- Feedback summary with average rating, total submissions, and rating distribution
+- Searchable feedback table with sorting and rating filters
+- Game statistics overview with player activity and answer-performance metrics
+- Admin-only sections for protected data views
+- Appwrite-backed data loading for feedback and game records
+- GitHub Pages deployment via GitHub Actions
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- Material UI
+- Appwrite
+
+## Getting Started
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/OleksiiNesteruk/WhoAImFlow.git
+cd WhoAImFlow
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file in the project root and add:
 
 ```env
 API_ENDPOINT=
@@ -15,18 +48,23 @@ FEEDBACK_COLLECTION_ID=
 GAME_DATA_COLLECTION_ID=
 ```
 
-3. Запусти:
+4. Start the development server:
 
 ```bash
-npm install
 npm run dev
 ```
 
-## GitHub Pages
+5. Build for production:
 
-У репозиторії вже є workflow для автоматичного деплою на GitHub Pages після пушу в `main`.
+```bash
+npm run build
+```
 
-Перед першим деплоєм треба додати в GitHub repository variables:
+## Deployment
+
+This repository includes a GitHub Actions workflow for GitHub Pages deployment.
+
+Before the first deployment, add these repository variables in GitHub:
 
 - `API_ENDPOINT`
 - `PROJECT_ID`
@@ -34,10 +72,4 @@ npm run dev
 - `FEEDBACK_COLLECTION_ID`
 - `GAME_DATA_COLLECTION_ID`
 
-Після цього:
-
-1. Push у `main`
-2. У GitHub відкрий `Settings` -> `Pages`
-3. У `Source` вибери `GitHub Actions`
-
-Після успішного workflow сайт буде доступний у GitHub Pages URL цього репозиторію.
+Then open `Settings -> Pages` and set the source to `GitHub Actions`.
